@@ -19,8 +19,8 @@ import lombok.Setter;
 
 /**
  * 従業員データのDTOモデル
+ *
  */
-
 @Table(name = JpaConst.TABLE_EMP)
 @NamedQueries({
     @NamedQuery(
@@ -37,10 +37,10 @@ import lombok.Setter;
             query = JpaConst.Q_EMP_GET_BY_CODE_AND_PASS_DEF)
 })
 
-@Getter //全てのクラスフィールドについてgetterを自動生成する（Lombok）
-@Setter //全てのクラスフィールドについてsetterを自動生成する（Lombok）
-@NoArgsConstructor //引数なしコンストラクタを自動生成する（Lombok）
-@AllArgsConstructor //全てのクラスフィールドを引数に持つ引数ありコンストラクタを自動生成する（Lombok)
+@Getter //全てのクラスフィールドについてgetterを自動生成する(Lombok)
+@Setter //全てのクラスフィールドについてsetterを自動生成する(Lombok)
+@NoArgsConstructor //引数なしコンストラクタを自動生成する(Lombok)
+@AllArgsConstructor //全てのクラスフィールドを引数にもつ引数ありコンストラクタを自動生成する(Lombok)
 @Entity
 public class Employee {
 
@@ -56,7 +56,7 @@ public class Employee {
      * 社員番号
      */
     @Column(name = JpaConst.EMP_COL_CODE, nullable = false, unique = true)
-    private Integer code;
+    private String code;
 
     /**
      * 氏名
@@ -68,16 +68,16 @@ public class Employee {
      * パスワード
      */
     @Column(name = JpaConst.EMP_COL_PASS, length = 64, nullable = false)
-    private Integer password;
+    private String password;
 
     /**
      * 管理者権限があるかどうか（一般：0、管理者：1）
      */
     @Column(name = JpaConst.EMP_COL_ADMIN_FLAG, nullable = false)
-    private Integer adminflag;
+    private Integer adminFlag;
 
     /**
-     * 登録日時
+     *登録日時
      */
     @Column(name = JpaConst.EMP_COL_CREATED_AT, nullable = false)
     private LocalDateTime createdAt;
