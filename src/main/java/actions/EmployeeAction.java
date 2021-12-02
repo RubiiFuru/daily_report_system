@@ -201,7 +201,7 @@ public class EmployeeAction extends ActionBase {
      */
     public void update() throws ServletException, IOException {
 
-        //CSRF対策 tokenのチェック
+        //CSRF対策　tokenのチェック
         if (checkToken()) {
             //パラメータの値を元に従業員情報のインスタンスを作成する
             EmployeeView ev = new EmployeeView(
@@ -221,6 +221,7 @@ public class EmployeeAction extends ActionBase {
             List<String> errors = service.update(ev, pepper);
 
             if (errors.size() > 0) {
+
                 //更新中にエラーが発生した場合
 
                 putRequestScope(AttributeConst.TOKEN, getTokenId()); //CSRF対策用トークン
@@ -229,6 +230,7 @@ public class EmployeeAction extends ActionBase {
 
                 //編集画面を再表示
                 forward(ForwardConst.FW_EMP_EDIT);
+
             } else {
                 //更新中にエラーがなかった場合
 
@@ -248,7 +250,7 @@ public class EmployeeAction extends ActionBase {
      */
     public void destroy() throws ServletException, IOException {
 
-        //CSRF対策 tokenのチェック
+        //CSRF対策　tokenのチェック
         if (checkToken()) {
 
             //idを条件に従業員データを論理削除する
