@@ -171,6 +171,7 @@ public abstract class ActionBase {
             number = Integer.parseInt(strNumber);
         } catch (Exception e) {
             number = Integer.MIN_VALUE;
+            e.printStackTrace();
         }
         return number;
     }

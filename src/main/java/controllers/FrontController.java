@@ -82,6 +82,7 @@ public class FrontController extends HttpServlet {
             //エラー処理を行うActionオブジェクトを作成
 
             action = new UnknownAction();
+            e.printStackTrace();
         }
         return action;
     }
