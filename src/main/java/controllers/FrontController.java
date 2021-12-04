@@ -41,8 +41,7 @@ public class FrontController extends HttpServlet {
         }
 
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request, response);
     }
 
@@ -82,7 +81,6 @@ public class FrontController extends HttpServlet {
             //エラー処理を行うActionオブジェクトを作成
 
             action = new UnknownAction();
-            e.printStackTrace();
         }
         return action;
     }
