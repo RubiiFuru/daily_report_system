@@ -9,7 +9,7 @@
 <c:set var="actAuth" value="${ForwardConst.ACT_AUTH.getValue()}" />
 
 <c:set var="commIdx" value="${ForwardConst.CMD_INDEX.getValue()}" />
-<c:set var="commOut" value="${CMD_LOGOUT.getValue()}" />
+<c:set var="commOut" value="${ForwardConst.CMD_LOGOUT.getValue()}" />
 
 
 <!DOCTYPE html>
@@ -31,17 +31,17 @@
                 </c:if>
                 <a href="<c:url value='?action=${actRep}&command=${commIdx}' />">日報管理</a>&nbsp;
             </c:if>
-            </div>
-            <c:if test="${sessionScope.login_employee != null}">
-                <div id="employee_name">
-                    <c:out value="${sessionScope.login_employee.name}" />
-                    &nbsp;さん&nbsp;&nbsp;&nbsp;
-                    <a href="<c:url value='?action=${actAuth}&command=${commOut}' />">ログアウト</a>
-                </div>
-            </c:if>
         </div>
-        <div id="content">${param.content}</div>
-        <div id="footer">by Taro Kirameki.</div>
+        <c:if test="${sessionScope.login_employee != null}">
+            <div id="employee_name">
+                <c:out value="${sessionScope.login_employee.name}" />
+                &nbsp;さん&nbsp;&nbsp;&nbsp;
+                <a href="<c:url value='?action=${actAuth}&command=${commOut}' />">ログアウト</a>
+            </div>
+        </c:if>
+    </div>
+    <div id="content">${param.content}</div>
+    <div id="footer">by Taro Kirameki.</div>
     </div>
 </body>
 </html>

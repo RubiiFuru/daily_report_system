@@ -71,12 +71,14 @@ public abstract class ActionBase {
 
             //発生した例外をコンソールに表示
             e.printStackTrace();
-        }
+
             //commandの値が不正で実行できない場合エラー画面を呼び出し
             forward(ForwardConst.FW_ERR_UNKNOWN);
 
+        }
 
     }
+
 
     /**
      * 指定されたjspの呼び出しを行う
@@ -171,7 +173,6 @@ public abstract class ActionBase {
             number = Integer.parseInt(strNumber);
         } catch (Exception e) {
             number = Integer.MIN_VALUE;
-            e.printStackTrace();
         }
         return number;
     }
