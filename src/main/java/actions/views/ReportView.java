@@ -26,12 +26,17 @@ public class ReportView {
     /**
      * 日報を登録した従業員
      */
-    private EmployeeView employees;
+    private EmployeeView employee;
 
     /**
      * いつの日報かを示す日付
      */
     private LocalDate reportDate;
+
+    /**
+     * 日報のタイトル
+     */
+    private String title;
 
     /**
      * 日報の内容
