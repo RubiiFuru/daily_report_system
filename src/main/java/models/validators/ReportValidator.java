@@ -23,7 +23,14 @@ public class ReportValidator {
             errors.add(titleError);
         }
 
+        //内容のチェック
+        String contentError = validateContent(rv.getContent());
+                if (!contentError.equals("")) {
+                    errors.add(contentError);
+                }
         return errors;
+
+
     }
 
     /**

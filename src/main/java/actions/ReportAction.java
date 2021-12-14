@@ -50,7 +50,7 @@ public class ReportAction extends ActionBase {
         long reportsCount = service.countAll();
 
         putRequestScope(AttributeConst.REPORTS, reports); //取得した日報データ
-        putRequestScope(AttributeConst.REP_CONTENT, reportsCount); //全ての日報データの件数
+        putRequestScope(AttributeConst.REP_COUNT, reportsCount); //全ての日報データの件数
         putRequestScope(AttributeConst.PAGE, page); //ページ数
         putRequestScope(AttributeConst.MAX_ROW, JpaConst.ROW_PER_PAGE); //1ページに表示するレコードの数
 
